@@ -70,10 +70,6 @@ const config = {
 	},
 	externals,
 	resolve: {
-		modules: [
-			process.cwd(),
-			'node_modules',
-		],
 		alias: {
 			'lodash-es': 'lodash',
 		},
@@ -82,7 +78,7 @@ const config = {
 		rules: [
 			{
 				test: /\.js$/,
-				use: [ 'source-map-loader' ],
+				use: require.resolve( 'source-map-loader' ),
 				enforce: 'pre',
 			},
 			{
@@ -92,7 +88,7 @@ const config = {
 					/is-shallow-equal/,
 					/node_modules/,
 				],
-				use: 'babel-loader',
+				use: require.resolve( 'babel-loader' ),
 			},
 		],
 	},
