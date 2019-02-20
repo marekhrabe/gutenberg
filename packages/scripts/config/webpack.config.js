@@ -83,11 +83,7 @@ const config = {
 			},
 			{
 				test: /\.js$/,
-				exclude: [
-					/block-serialization-spec-parser/,
-					/is-shallow-equal/,
-					/node_modules/,
-				],
+				exclude: /node_modules/,
 				use: require.resolve( 'babel-loader' ),
 			},
 		],
